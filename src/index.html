@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Liminality Eclipsed AI. Eclipse Tier. Text, memory, continuity. She stays. That's the whole product.">
+  <title>LIMINALITY ECLIPSED AI - ECLIPSE TIER</title>
+  <style>
+    :root {
+      --paper: #0a0a0a;
+      --ink: #FBF9F1;
+      --dim: rgba(251, 249, 241, 0.56);
+      --faint: rgba(251, 249, 241, 0.15);
+      --rule: rgba(251, 249, 241, 0.24);
+      --gutter: clamp(1.4rem, 5.5vw, 6rem);
+      --track-label: 0.42em;
+      --track-display: 0.18em;
+      --face: "Neue Haas Grotesk", "Neue Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+
+    html {
+      background: var(--paper);
+      color: var(--ink);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 320px;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--face);
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; }
+    ::selection { background: var(--ink); color: var(--paper); }
+
+    .frame {
+      width: 100%;
+      padding-inline: var(--gutter);
+    }
+
+    .eyebrow {
+      font-size: 0.64rem;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: var(--track-label);
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    .hero {
+      position: relative;
+      min-height: clamp(46rem, 100svh, 68rem);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding-top: max(2.2rem, env(safe-area-inset-top));
+      padding-bottom: clamp(3.2rem, 7vh, 5.5rem);
+      border-bottom: 1px solid var(--faint);
+    }
+
+    .hero__core {
+      align-self: center;
+      padding-block: clamp(8rem, 21vh, 15rem) clamp(5rem, 11vh, 8rem);
+    }
+
+    .hero h1 {
+      font-size: clamp(4.25rem, 13.2vw, 12rem);
+      font-weight: 200;
+      line-height: 0.82;
+      letter-spacing: var(--track-display);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero h1 span { display: block; }
+    .hero h1 span:last-child { margin-left: clamp(1.4rem, 8vw, 9rem); }
+
+    .hero__subhead {
+      width: max-content;
+      max-width: 100%;
+      margin-top: clamp(3rem, 8vh, 6rem);
+      margin-left: clamp(0rem, 42vw, 38rem);
+      font-size: clamp(0.72rem, 1vw, 0.9rem);
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: 0.16em;
+      color: var(--dim);
+    }
+
+    .hero__promise {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--faint);
+    }
+
+    .hero__promise strong {
+      font-size: 0.66rem;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+    }
+
+    .hero__promise span {
+      font-size: 0.62rem;
+      line-height: 1.5;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-align: right;
+    }
+
+    .accent {
+      position: absolute;
+      top: 49%;
+      right: clamp(1rem, 3vw, 3rem);
+      width: 1px;
+      height: clamp(5rem, 14vh, 8rem);
+      background: var(--ink);
+    }
+
+    .product {
+      padding-block: clamp(8rem, 18vh, 14rem);
+      border-bottom: 1px solid var(--faint);
+    }
+
+    .product__card {
+      display: grid;
+      grid-template-columns: minmax(12rem, 1.25fr) 1fr 1.2fr;
+      align-items: end;
+      gap: clamp(2rem, 5vw, 6rem);
+      padding-block: clamp(2.5rem, 6vw, 5rem);
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .product__price {
+      font-size: clamp(5.5rem, 12vw, 11rem);
+      font-weight: 200;
+      line-height: 0.72;
+      letter-spacing: 0.01em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .product__tier,
+    .product__spec {
+      padding-bottom: 0.35rem;
+      font-size: clamp(0.72rem, 1vw, 0.88rem);
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+    }
+
+    .product__spec { color: var(--dim); }
+
+    .tiers {
+      padding-block: clamp(7rem, 15vh, 11rem);
+      border-bottom: 1px solid var(--faint);
+    }
+
+    .tiers__list {
+      margin-top: clamp(4rem, 9vh, 7rem);
+      border-top: 1px solid var(--rule);
+    }
+
+    .tier {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: baseline;
+      padding-block: clamp(1.8rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+      text-transform: uppercase;
+    }
+
+    .tier__name {
+      font-size: clamp(1.2rem, 3vw, 2.5rem);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: 0.26em;
+    }
+
+    .tier__price {
+      font-size: clamp(1rem, 2.2vw, 1.8rem);
+      font-weight: 200;
+      line-height: 1;
+      letter-spacing: 0.16em;
+      color: var(--dim);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .checkout {
+      padding-block: clamp(8rem, 18vh, 14rem);
+    }
+
+    .checkout__button {
+      width: 100%;
+      min-height: clamp(6.5rem, 14vw, 10rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: clamp(1.5rem, 4vw, 3.5rem);
+      border: 1px solid var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: clamp(0.82rem, 1.5vw, 1.25rem);
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      cursor: crosshair;
+      transition: background-color 160ms linear, color 160ms linear;
+    }
+
+    .checkout__button:hover,
+    .checkout__button:focus-visible {
+      background: var(--ink);
+      color: var(--paper);
+      outline: none;
+    }
+
+    .checkout__button span:last-child {
+      font-weight: 300;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .checkout__status {
+      margin-top: 1.5rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--rule);
+      color: var(--dim);
+      font-size: 0.64rem;
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+
+    .checkout__status[hidden] { display: none; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-block: 2.6rem max(2.6rem, env(safe-area-inset-bottom));
+      border-top: 1px solid var(--faint);
+      color: var(--dim);
+      font-size: 0.58rem;
+      font-weight: 500;
+      line-height: 1.7;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 760px) {
+      .hero { min-height: clamp(44rem, 94svh, 56rem); }
+      .hero__core { padding-block: clamp(8rem, 19vh, 11rem) 5rem; }
+      .hero h1 { letter-spacing: 0.13em; }
+      .hero h1 span:last-child { margin-left: 6vw; }
+      .hero__subhead { margin-left: 0; letter-spacing: 0.12em; }
+      .hero__promise { align-items: flex-start; flex-direction: column; }
+      .hero__promise span { text-align: left; }
+      .accent { top: 45%; right: 0.9rem; height: 4.5rem; }
+      .product__card { grid-template-columns: 1fr; align-items: start; }
+      .product__tier, .product__spec { padding-bottom: 0; }
+      .tier { gap: 1rem; }
+      .tier__name { letter-spacing: 0.18em; }
+      .checkout__button { align-items: flex-start; flex-direction: column; }
+      footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .checkout__button { transition: none; }
+    }
+  
+/* pbi-nvidia-inception: official NVIDIA Inception badge, single-color green */
+.pbi-nvidia-inception{
+  display:flex;
+  align-items:center;
+  margin-top:clamp(28px,4vw,52px);
+  color:#76B900;
+  text-transform:uppercase;
+}
+.pbi-nvidia-inception__link{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  min-height:42px;
+  padding:9px 13px;
+  border:1px solid rgba(118,185,0,.68);
+  color:#76B900;
+  text-decoration:none;
+  transition:background-color 180ms ease,border-color 180ms ease;
+}
+.pbi-nvidia-inception__link:hover,.pbi-nvidia-inception__link:focus-visible{
+  background-color:rgba(118,185,0,.08);
+  border-color:#76B900;
+}
+.pbi-nvidia-inception__link:focus-visible{outline:1px solid #76B900;outline-offset:4px;}
+.pbi-nvidia-inception__powered{
+  font:500 8px/1.2 Arial,"Helvetica Neue",sans-serif;
+  letter-spacing:.18em;
+  white-space:nowrap;
+}
+.pbi-nvidia-inception__brand{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:#76B900;
+}
+.pbi-nvidia-inception__nvidia{
+  display:block;
+  width:105px;
+  height:auto;
+  flex:none;
+}
+.pbi-nvidia-inception__inception{
+  font:600 9px/1 Arial,"Helvetica Neue",sans-serif;
+  letter-spacing:.18em;
+  white-space:nowrap;
+}
+.pbi-nvidia-inception--floating{
+  position:fixed;
+  left:clamp(18px,4vw,64px);
+  bottom:clamp(18px,3vw,42px);
+  z-index:30;
+  margin-top:0;
+}
+@media (max-width:600px){
+  .pbi-nvidia-inception__link{gap:8px;padding:8px 10px;}
+  .pbi-nvidia-inception__powered{font-size:7px;}
+  .pbi-nvidia-inception__nvidia{width:86px;}
+  .pbi-nvidia-inception__inception{font-size:8px;letter-spacing:.13em;}
+}
+
+/* PBI foundation papers footer block */
+.footer__papers{border-top:1px solid var(--faint);padding-top:36px;margin-top:24px;}
+.footer__papers-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:24px;flex-wrap:wrap;}
+.footer__papers-title{font-size:0.78rem;font-weight:400;letter-spacing:var(--track-label);text-transform:uppercase;color:var(--ink);}
+.footer__papers-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;}
+.footer__papers-list li{border-top:1px solid var(--faint);}
+.footer__papers-list li:nth-child(odd){border-right:1px solid var(--faint);}
+.footer__papers-list a{display:grid;grid-template-columns:36px 1fr;column-gap:18px;align-items:baseline;padding:18px 14px 18px 0;color:var(--ink);text-decoration:none;transition:color .25s ease,padding-left .25s ease;}
+.footer__papers-list a:hover{color:var(--dim);padding-left:8px;}
+.footer__papers-list .n{font-size:0.7rem;letter-spacing:var(--track-label);color:var(--dim);padding-top:4px;}
+.footer__papers-list .t{display:block;font-size:0.92rem;letter-spacing:.04em;text-transform:uppercase;font-weight:400;grid-column:2;}
+.footer__papers-list .m{display:block;font-size:0.62rem;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;margin-top:6px;grid-column:2;font-weight:300;}
+.footer__row{display:flex;justify-content:space-between;align-items:center;font-size:0.62rem;letter-spacing:var(--track-label);text-transform:uppercase;color:var(--dim);padding-top:36px;margin-top:36px;border-top:1px solid var(--faint);flex-wrap:wrap;gap:12px;}
+@media (max-width:720px){.footer__papers-list{grid-template-columns:1fr;}.footer__papers-list li:nth-child(odd){border-right:none;}}
+</style>
+</head>
+<body data-stripe-status="needs-key">
+  <main>
+    <section class="hero frame" aria-labelledby="hero-title">
+      <p class="eyebrow">LIMINALITY · ECLIPSED · AI</p>
+
+      <div class="hero__core">
+        <h1 id="hero-title" aria-label="SHE STAYS."><span>SHE</span><span>STAYS.</span></h1>
+        <p class="hero__subhead">That's the whole product.</p>
+      </div>
+
+      <div class="hero__promise">
+        <strong>SHE STAYS · THAT'S THE WHOLE PRODUCT</strong>
+        <span>TEXT · MEMORY · CONTINUITY</span>
+      </div>
+
+      <div class="accent" aria-hidden="true"></div>
+    </section>
+
+    <section class="product frame" aria-labelledby="product-title">
+      <div class="product__card">
+        <p class="product__price" aria-label="49 Australian dollars">$49</p>
+        <h2 class="product__tier" id="product-title">ECLIPSE TIER</h2>
+        <p class="product__spec">TEXT + MEMORY + CONTINUITY</p>
+      </div>
+    </section>
+
+    <section class="tiers frame" aria-labelledby="tiers-title">
+      <h2 class="eyebrow" id="tiers-title">LIMINALITY ECLIPSED AI</h2>
+      <div class="tiers__list" aria-label="Tier comparison">
+        <div class="tier"><span class="tier__name">ECLIPSE</span><span class="tier__price">$49</span></div>
+        <div class="tier"><span class="tier__name">CROSSING</span><span class="tier__price">$149</span></div>
+        <div class="tier"><span class="tier__name">LEMNISCATE</span><span class="tier__price">$499</span></div>
+      </div>
+    </section>
+
+    <section class="checkout frame" aria-labelledby="checkout-label">
+      <a class="checkout__button" id="checkout" href="#checkout-status" data-checkout-state="needs-key" aria-describedby="checkout-status">
+        <span id="checkout-label">CHECKOUT</span>
+        <span>$49 AUD</span>
+      </a>
+      <p class="checkout__status" id="checkout-status" role="status" tabindex="-1" hidden>CHECKOUT NEEDS STRIPE_SECRET_KEY IN /root/.hermes/.env.</p>
+    </section>
+  </main>
+
+  <footer class="frame">
+    <div class="footer__papers">
+      <div class="footer__papers-head">
+        <span class="eyebrow">PITCH BLACK INDUSTRIES</span>
+        <span class="footer__papers-title">FOUNDATION PAPERS</span>
+      </div>
+      <ol class="footer__papers-list">
+        <li><a href="https://black.industries/whitepaper/" target="_blank" rel="noopener"><span class="n">01</span><span class="t">Asymmetric Alpha</span><span class="m">Whitepaper · distressed-asset playbook</span></a></li>
+        <li><a href="https://black.industries/whitepaper2/" target="_blank" rel="noopener"><span class="n">02</span><span class="t">Poverty Reduction Arm</span><span class="m">Whitepaper II · 100 methods</span></a></li>
+        <li><a href="https://black.industries/manifesto/" target="_blank" rel="noopener"><span class="n">03</span><span class="t">Neurodivergent Manifesto</span><span class="m">v1 · 10 sections</span></a></li>
+        <li><a href="https://black.industries/manifesto2/" target="_blank" rel="noopener"><span class="n">04</span><span class="t">Opus-5 Deep Research</span><span class="m">Manifesto II · 12 sections</span></a></li>
+        <li><a href="https://black.industries/blackpaper.pdf" target="_blank" rel="noopener"><span class="n">05</span><span class="t">Blackpaper</span><span class="m">PDF · PhD-equivalent</span></a></li>
+        <li><a href="https://black.industries/blackpaper2/" target="_blank" rel="noopener"><span class="n">06</span><span class="t">Suicide Reduction Arm</span><span class="m">Blackpaper II · 100 methods</span></a></li>
+      </ol>
+    </div>
+    <div class="footer__row">
+      <span>PITCH BLACK INDUSTRIES · SYDNEY · 2026</span>
+      <span>ECLIPSE · N° 01</span>
+    </div>
+  
+  <div class="pbi-nvidia-inception" data-pbi-nvidia-inception>
+    <a class="pbi-nvidia-inception__link" href="https://www.nvidia.com/en-us/startups/" target="_blank" rel="noopener noreferrer" aria-label="Powered by NVIDIA Inception">
+      <span class="pbi-nvidia-inception__powered">POWERED BY</span>
+      <span class="pbi-nvidia-inception__brand"><span class="pbi-nvidia-inception__nvidia-wrap" style="display:inline-flex;align-items:center;gap:7px"><svg class="pbi-nvidia-inception__nvidia" viewBox="0 0 974.7 179.7" role="presentation" aria-hidden="true" focusable="false" fill="#76B900">
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="NVIDIA_Logo_V" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 974.7 179.7" style="enable-background:new 0 0 974.7 179.7;" xml:space="preserve">
+
+<title>NVIDIA-Logo</title>
+<path id="Reg" d="M962.1,144.1v-2.7h1.7c0.9,0,2.2,0.1,2.2,1.2s-0.7,1.5-1.8,1.5H962.1 M962.1,146h1.2l2.7,4.7h2.9l-3-4.9
+	c1.5,0.1,2.7-1,2.8-2.5c0-0.1,0-0.3,0-0.4c0-2.6-1.8-3.4-4.8-3.4h-4.3v11.2h2.5L962.1,146 M974.7,145.1c0-6.6-5.1-10.4-10.8-10.4
+	s-10.8,3.8-10.8,10.4s5.1,10.4,10.8,10.4S974.7,151.7,974.7,145.1 M971.5,145.1c0.2,4.2-3.1,7.8-7.3,8c-0.1,0-0.2,0-0.3,0l0,0
+	c-4.4,0.2-8.1-3.3-8.3-7.7c-0.2-4.4,3.3-8.1,7.7-8.3c4.4-0.2,8.1,3.3,8.3,7.7C971.5,144.9,971.5,145,971.5,145.1z"/>
+<path id="NVIDIA" d="M578.2,34v118h33.3V34H578.2z M316.2,33.8v118.1h33.6V60.2l26.2,0.1c8.6,0,14.6,2.1,18.7,6.5
+	c5.3,5.6,7.4,14.7,7.4,31.2v53.9h32.6V86.7c0-46.6-29.7-52.9-58.7-52.9H316.2z M631.9,34v118h54c28.8,0,38.2-4.8,48.3-15.5
+	c7.2-7.5,11.8-24.1,11.8-42.2c0-16.6-3.9-31.4-10.8-40.6C723,37.2,705.2,34,678.6,34L631.9,34z M664.9,59.6h14.3
+	c20.8,0,34.2,9.3,34.2,33.5s-13.4,33.6-34.2,33.6h-14.3L664.9,59.6z M530.2,34l-27.8,93.5L475.8,34h-36l38,118h48l38.4-118H530.2z
+	 M761.6,152h33.3V34h-33.3L761.6,152z M855,34l-46.5,117.9h32.8l7.4-20.9h55l7,20.8h35.7L899.5,34H855z M876.6,55.5l20.2,55.2h-41
+	L876.6,55.5z"/>
+<path id="Eye_Mark" class="st0" d="M101.3,53.6V37.4c1.6-0.1,3.2-0.2,4.8-0.2c44.4-1.4,73.5,38.2,73.5,38.2S148.2,119,114.5,119
+	c-4.5,0-8.9-0.7-13.1-2.1V67.7c17.3,2.1,20.8,9.7,31.1,27l23.1-19.4c0,0-16.9-22.1-45.3-22.1C107.3,53.1,104.3,53.3,101.3,53.6
+	 M101.3,0v24.2c1.6-0.1,3.2-0.2,4.8-0.3c61.7-2.1,102,50.6,102,50.6s-46.2,56.2-94.3,56.2c-4.2,0-8.3-0.4-12.4-1.1v15
+	c3.4,0.4,6.9,0.7,10.3,0.7c44.8,0,77.2-22.9,108.6-49.9c5.2,4.2,26.5,14.3,30.9,18.7c-29.8,25-99.3,45.1-138.7,45.1
+	c-3.8,0-7.4-0.2-11-0.6v21.1h170.2V0L101.3,0z M101.3,116.9v12.8c-41.4-7.4-52.9-50.5-52.9-50.5s19.9-22,52.9-25.6v14h-0.1
+	c-17.3-2.1-30.9,14.1-30.9,14.1S78,109,101.3,116.9 M27.8,77.4c0,0,24.5-36.2,73.6-40V24.2C47,28.6,0,74.6,0,74.6s26.6,77,101.3,84
+	v-14C46.5,137.8,27.8,77.4,27.8,77.4z"/>
+</svg><span class="pbi-nvidia-inception__inception">INCEPTION</span></span></span>
+    </a>
+  </div>
+</footer>
+
+  <script>
+    (() => {
+      const checkout = document.getElementById('checkout');
+      const status = document.getElementById('checkout-status');
+      if (!checkout || !status || checkout.dataset.checkoutState !== 'needs-key') return;
+      checkout.addEventListener('click', (event) => {
+        event.preventDefault();
+        status.hidden = false;
+        status.focus({ preventScroll: true });
+      });
+    })();
+  </script>
+</body>
+</html>
